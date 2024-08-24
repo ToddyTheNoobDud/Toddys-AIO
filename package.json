@@ -1,15 +1,16 @@
 {
 	"dependencies": {
-		"discord.js": "^14.15.3"
+		"discord.js": "^14.15.3",
+		"dotenv": "^16.4.5"
 	},
 	"scripts": {
 		"start": "node bot.mjs"
 	},
 	"main": "bot.mjs",
-	"name": "todds-aio"
-,	"version": "1.0.0"
-,	"description": "Todds AIO bot, made for fun lol",
-"type": "module",
+	"name": "todds-aio",
+	"version": "1.0.0",
+	"description": "Todds AIO bot, made for fun lol",
+	"type": "module",
 	"author": {
 		"name": "mushroom0162"
 	}
