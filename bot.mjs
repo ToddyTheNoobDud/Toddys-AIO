@@ -34,7 +34,7 @@ client.on("ready", () => {
 
 await Promise.all([
     import("./src/handlers/Command.mjs").then(({ CommandHandler }) => CommandHandler(client, rootPath)),
-    import("./src/handlers/Event.mjs").then(({ EventHandler }) => EventHandler(client, rootPath))
+    import("./src/handlers/Event.mjs").then(({ EventHandler }) => EventHandler(client, rootPath)),
   ]);
 client.login(process.env.TOKEN);
 

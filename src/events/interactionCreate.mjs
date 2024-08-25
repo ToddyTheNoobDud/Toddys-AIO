@@ -2,9 +2,11 @@ export const Event = {
     name: "interactionCreate",
     run: async (client, interaction) => {
         try {
-            const command = interaction.isChatInputCommand() ? client.slashCommands.get(interaction.commandName) :
-            interaction.isButton() ? client.buttonCommands.get(interaction.customId) :
-            interaction.isStringSelectMenu() ? client.selectMenus.get(interaction.values[0] ?? interaction.customId) : null;
+            const { buttonCommands, selectMenus, slashCommands } = client;
+            const { customId } = interaction;
+            const command = interaction.isChatInputCommand() ? slashCommands.get(interaction.commandName) :
+            interaction.isButton() ? buttonCommands.get(customId) :
+            interaction.isStringSelectMenu() ? selectMenus.get(customId) : null;
 
             if (command) command.run(client, interaction);
         } catch (error) {
@@ -12,3 +14,4 @@ export const Event = {
         }
     }
 }
+
