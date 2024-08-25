@@ -15,7 +15,7 @@ export const Command = {
     run: async (client, interaction) => {
         const user = interaction.options.getUser('user') ?? interaction.user;
         const percentage = Math.floor(Math.random() * 101);
-
+        
         const embed = new EmbedBuilder()
             .setColor(0,0,0)
             .setAuthor({ name: 'Gay Detector', iconURL: client.user.displayAvatarURL() })
